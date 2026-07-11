@@ -1,0 +1,612 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    scroll-behavior: smooth;
+    font-family: 'Poppins';
+}
+:root{
+    --background: rgb(24,24,24);
+    --second-background: rgb(21,21,21);
+}
+body{
+    min-width: 100vh;
+    background-color: white;
+}
+
+nav{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 2em 15%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;                 /*chia các biến logo, links, và btn đều ra trên bar*/
+    background-color:bisque;
+    backdrop-filter: blur(10px);
+    z-index: 1000;                                  /*làm cho khi scroll xuống thì navigation bar cũng đi theo*/
+}
+
+.logo{
+    color:darkblue;
+    font-size: 2.4em;
+    font-weight: 800;
+    opacity: 0.8;
+    transition: 0.2s ease-in-out;
+}
+
+.logo:hover{
+    opacity: 1;
+}
+
+ul{                                                 /*links*/
+    display: flex;
+    align-items: center;
+    gap: 3em;                                       /*gap giữa about và experience*/
+}
+
+nav ul a{                                           /*chỉnh text about và experience*/
+    color:darkblue;
+    opacity: 0.7;
+    transition: 0.2s ease-in-out;
+    font-size: 1.3em;
+    font-weight: 900;
+}
+
+nav ul a:hover{                                     /*khi lia chuột lên*/
+    opacity: 1;
+}
+
+.btn{
+    padding: 0.7em 1em;
+    color:darkblue;
+    font-weight: 900;    
+    font-size: 1.3em;                           /*độ đậm của chữ, giống như chỉnh thành chữ BOLD*/
+    border: 2px solid darkblue;
+    cursor: pointer;                                /*cursor và transition được dùng để làm cho biến đó thành một nút có thể nhấn được*/
+    transition: 0.3s ease-in-out;
+    letter-spacing: 1px;
+    border-radius: 4em;
+}
+
+.btn:hover{
+    background-color: white;
+    color: var(--background);   
+}
+
+section {
+    min-height: 100vh;
+    padding: 120px 5% 15%;
+    /* Thêm dòng này để áp dụng sửa lỗi cuộn cho tất cả các trang */
+    scroll-margin-top: 120px; 
+}
+
+#home {
+    width: 70%;                     /*khung chứa hình sẽ có kích cỡ 70% của section*/
+    padding: 0;
+    overflow: hidden; 
+    
+    margin: 40px auto 0 auto;      /*auto là canh giữa tấm hình*/
+}
+
+.profile1{
+    width: 100%;                    /*bức hình này sẽ chiếm hết 100% trong khung mà 70% kia tại ra*/
+    height: auto; 
+    object-fit: cover;
+    object-position: center; 
+    display: block;
+    margin-top: 80px;
+}
+
+#about{                                         
+    display: flex;
+    justify-content: center;
+    gap: 5em;
+    background-color: white;    
+}
+
+.profile{                                       /*hình profile*/
+    width: 25vw;
+    height: 25vw;
+    border-radius: 50%;
+    margin-top: -5em;
+    object-fit: cover;
+}
+
+.info-box{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+    max-width: 800px;
+    margin-top: 100px;                         /*đẩy đoạn giới thiệu xuống bên trong section*/
+
+}
+
+.info-box h1{
+    font-size: 2em;
+    font-weight: 400;
+    text-align: left;
+    color: black;
+    margin-top: -175px;
+}
+
+.info-box h2{
+    font-size: 3em;
+    font-weight: 600;
+    margin-top:20px;
+    text-align: left;
+    color: black;
+}
+
+
+.info-box h3{
+    font-size: 3em;
+    font-weight: 600;
+    text-align: left;
+    color: black;
+}
+
+.info-box h4{
+    font-size: 1.6em;
+    font-weight: 400;
+    margin-top:20px;
+    text-align: left;
+    color: black;
+}
+
+.info-box p{
+    font-size: 1.6em;
+    font-weight: 500;
+    margin-top:20px;
+
+    text-align: justify;               /*căn đều 2 bên*/
+    color: black;
+}
+
+.btn-box{                      /*nút thứ nhất hire me*/
+    display: flex;
+    gap: 1em;
+    margin-top: 30px;
+}
+
+
+.btn-box .btn:nth-of-type(2){           /*nút thứ 2 download cv*/
+    background-color: white;
+    color: var(--background);
+}
+
+.btn-box .btn:nth-of-type(2):hover{
+    background-color: var(--background);
+    color: white;
+}
+
+#about2 {                                        
+    display: flex;
+    justify-content: center;
+    gap: 5em;
+    background-color: white;
+    
+    /* 🛠️ THÊM DÒNG NÀY ĐỂ XÓA KHOẢNG TRẮNG */
+    min-height: auto; 
+    
+    /* Điều chỉnh lại padding cho vừa vặn */
+    padding: 60px 5% 20px; 
+}
+
+.about-container{
+    width: 100%;
+    max-width: 1300px;
+    display: flex;
+}
+
+.skills ul{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem 7rem;
+    margin-top: 20px;
+
+}
+
+.skills li{
+    color: black;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.skills li:hover{
+    transform: translateX(10px);
+    font-weight: bold;
+}   
+
+.skillimg{
+    width: 35vw;
+    max-width: 450px;
+    border-radius: 1em;
+    object-fit: cover;
+}
+
+.about-info h1{
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color:darkblue;
+}
+
+
+
+#experience {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    scroll-margin-top: 140px; 
+    min-height: auto; /* Ngăn chặn khoảng trống thừa khổng lồ */
+    padding: 80px 10% 80px; 
+}
+
+.experience-title {
+    font-size: 2.5rem;
+    color: #1a1a1a;
+    margin-bottom: 2rem;
+    font-weight: 700;
+}
+
+.experience-title span {
+    border-bottom: 4px solid darkblue;
+    padding-bottom: 0.5rem;
+}
+
+/* --- Container chung cho mỗi công việc --- */
+.exp-container {
+    display: flex;
+    gap: 4rem;
+    align-items: flex-start;
+    margin-bottom: 6rem; /* Tạo khoảng cách thông thoáng giữa các công việc */
+    width: 100%;
+}
+
+.exp-container:last-child {
+    margin-bottom: 0; /* Xóa khoảng trống thừa ở công việc cuối cùng */
+}
+
+/* --- Cột bên trái: Thông tin công ty & Vị trí (Sticky) --- */
+.exp-left {
+    flex: 1;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 160px; /* Ghim thông tin công ty lại khi cuộn chuột qua phần trách nhiệm */
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.company-badge {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    color: darkblue;
+}
+
+.company-badge i {
+    font-size: 1.8rem;
+}
+
+.company-badge h2 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.exp-left h3 {
+    font-size: 1.25rem;
+    color: #333;
+    font-weight: 600;
+    margin: 0;
+}
+
+.exp-date, .exp-scale {
+    font-size: 0.95rem;
+    color: #666;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 500;
+}
+
+.exp-scale {
+    color: darkblue; /* Làm nổi bật chỉ số Scale */
+    font-weight: 600;
+    margin-top: -0.2rem;
+}
+
+.exp-summary {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+    margin-top: 0.5rem;
+}
+
+/* --- Cột bên phải: Trách nhiệm & Sự kiện --- */
+.exp-right {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+.exp-block {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.exp-block h4 {
+    font-size: 1.15rem;
+    color: darkblue;
+    font-weight: 600;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Danh sách chi tiết trách nhiệm */
+.exp-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.exp-list li {
+    font-size: 1rem;
+    color: #444;
+    line-height: 1.6;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.exp-list li::before {
+    content: "•";
+    color: darkblue;
+    font-weight: bold;
+    font-size: 1.2rem;
+    position: absolute;
+    left: 0;
+    top: -2px;
+}
+
+/* Lưới hiển thị các ô Key Events */
+.event-tags {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+.event-card {
+    background-color: #fafafa;
+    border: 1px solid #eef0f3;
+    border-left: 4px solid darkblue; /* Vệt màu làm điểm nhấn bên trái */
+    border-radius: 0.8rem;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.event-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+    background-color: #fff;
+}
+
+.event-card h5 {
+    font-size: 1.05rem;
+    color: darkblue;
+    margin: 0 0 0.5rem 0;
+    font-weight: 600;
+}
+
+.event-card p {
+    font-size: 0.9rem;
+    color: #666;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* --- Khối thư viện ảnh minh chứng (Picture Holders) --- */
+.exp-gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 cột bằng nhau, khít với phần text ở trên */
+    gap: 1.5rem;
+    margin-top: 1rem;
+    width: 100%;
+}
+
+.gallery-item {
+    height: 180px; /* Chiều cao lý tưởng, cân đối visual */
+    background-color: #f7f7f7;
+    border-radius: 0.8rem;
+    overflow: hidden;
+    position: relative;
+    border: 1px dashed #ccc; /* Viền đứt nét tạo giao diện placeholder */
+    cursor: pointer;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Giúp ảnh không bị méo hay vỡ tỉ lệ */
+    display: block;
+    opacity: 0.85;
+    transition: opacity 0.3s ease;
+}
+
+/* Lớp phủ chuyển màu hiện chữ khi di chuột vào ảnh */
+.gallery-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(transparent, rgba(0, 0, 139, 0.85));
+    padding: 12px 8px;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.gallery-overlay span {
+    color: white;
+    font-size: 0.8rem;
+    font-weight: 600;
+    display: block;
+}
+
+/* Hiệu ứng tương tác Hover ảnh */
+.gallery-item:hover {
+    transform: scale(1.03);
+    border-color: darkblue;
+    box-shadow: 0 8px 20px rgba(0, 0, 139, 0.15);
+}
+
+.gallery-item:hover img {
+    opacity: 1;
+}
+
+.gallery-item:hover .gallery-overlay {
+    opacity: 1;
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN (TỐI ƯU GIAO DIỆN DI ĐỘNG)
+   ========================================================================== */
+
+@media (max-width: 968px) {
+    #experience {
+        padding: 60px 5% 60px;
+    }
+
+    .exp-container {
+        flex-direction: column; /* Chuyển cột dọc trên máy tính bảng/điện thoại */
+        gap: 2rem;
+        margin-bottom: 4rem;
+    }
+
+    .exp-left {
+        position: static; /* Hủy tính năng sticky trên màn hình nhỏ để tránh lỗi cuộn */
+        width: 100%;
+    }
+
+    .event-tags {
+        grid-template-columns: 1fr; /* Key events xếp thành 1 hàng dọc */
+    }
+
+    .exp-gallery {
+        grid-template-columns: repeat(2, 1fr); /* Ảnh chuyển thành lưới 2x2 */
+        gap: 1rem;
+    }
+    
+    .gallery-item {
+        height: 150px; /* Giảm nhẹ chiều cao ảnh trên di động cho cân đối */
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#contact {
+    /* 🛠️ Sửa từ 100vh thành auto để ôm sát nội dung chân trang hợp lý */
+    min-height: auto; 
+    padding: 80px 10% 60px; /* Tạo khoảng cách đệm trên dưới rộng rãi */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.2rem;
+    color: black;
+    background-color: #fafafa; /* Thêm nền xám cực nhẹ để phân biệt với phần Experience trắng ở trên */
+}
+
+#contact h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: #1a1a1a;
+}
+
+#contact p {
+    font-size: 1.2rem; /* Giảm nhẹ từ 1.5rem xuống để nhìn thanh lịch, vừa vặn hơn */
+    font-weight: 400;
+    opacity: 0.85;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem; /* Khoảng cách giữa icon nhỏ và chữ text */
+}
+
+#contact p i {
+    color: darkblue; /* Các icon nhỏ trước chữ sẽ mang màu darkblue đồng bộ */
+    font-size: 1.4rem;
+}
+
+/* --- Khối chứa các icon mạng xã hội lớn --- */
+.contact-socials {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.contact-socials a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50px; /* Tạo vòng tròn hoàn hảo xung quanh icon */
+    background-color: white;
+    color: #333;
+    font-size: 1.8rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Đổ bóng nhẹ tạo chiều sâu ứng dụng */
+    text-decoration: none;
+    transition: all 0.3s ease; /* Chuyển động mượt mà khi hover */
+}
+
+/* Hiệu ứng tương tác khi rê chuột vào nút icon */
+.contact-socials a:hover {
+    background-color: darkblue; /* Đổi màu nền sang darkblue trùng tone */
+    color: white; /* Đổi icon sang màu trắng */
+    transform: translateY(-5px); /* Nút nhấc nhẹ lên tạo hiệu ứng clicky sinh động */
+    box-shadow: 0 8px 20px rgba(0, 0, 139, 0.3);
+}
+
+/* Responsive trên điện thoại */
+@media (max-width: 600px) {
+    #contact {
+        padding: 60px 5% 40px;
+    }
+    #contact h2 {
+        font-size: 2rem;
+    }
+    #contact p {
+        font-size: 1.05rem;
+    }
+}
